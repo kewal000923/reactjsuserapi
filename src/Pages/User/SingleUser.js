@@ -13,7 +13,7 @@ function SingleUser(){
     const [singleUser, setSingleUser]= useState(null);
     const [isLoading, setLoader]= useState(true);
     const getSingleUser = ()=>{
-        axios.get(`http://dummyjson.com/users/${id}`).then((res)=>{
+        axios.get(`https://dummyjson.com/users/${id}`).then((res)=>{
             setLoader(false);
             if(res.status === 200){
                 setSingleUser(res.data);

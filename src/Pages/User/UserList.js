@@ -17,7 +17,7 @@ function UserList(){
     const getUserData = (page)=>{
         setLoader(true);
         const cmSort = `sortBy=${sortBy.name}&order=${sortBy.value}${searchData !== "" ? `&q=${searchData}` : ""}`;
-        axios.get(`http://dummyjson.com/users${searchData !== "" ? "/search" : ""}?limit=10&${cmSort}&skip=${page === 1 ? "0" : `${page - 1}0` }`).then((res)=>{
+        axios.get(`https://dummyjson.com/users${searchData !== "" ? "/search" : ""}?limit=10&${cmSort}&skip=${page === 1 ? "0" : `${page - 1}0` }`).then((res)=>{
             setLoader(false);
             if(res.status === 200){
                 const {users, total} = res.data;
